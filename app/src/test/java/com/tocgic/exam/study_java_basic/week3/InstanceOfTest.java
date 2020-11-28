@@ -16,7 +16,7 @@ public class InstanceOfTest {
             ((GamePlayer) phone).playGame();
         }
         if (phone instanceof RadioPlayer) {
-            ((RadioPlayer) phone).playRadio();
+            ((RadioPlayer) phone).playRadio(2.3f);
         }
         if (phone instanceof VideoPlayer) {
             ((VideoPlayer) phone).playVideo();
