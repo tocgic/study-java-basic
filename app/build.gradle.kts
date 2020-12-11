@@ -17,8 +17,15 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework.
-    testImplementation("junit:junit:4.13")
+    // Use JUnit Jupiter API for testing.
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
+
+    // Use JUnit Jupiter Engine for testing.
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+
+    // JUnit Vintage 종속성 설정 (플랫폼에서 레거시 JUnit 3/4 실행 시)
+    testCompileOnly("junit:junit:4.13")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:29.0-jre")
