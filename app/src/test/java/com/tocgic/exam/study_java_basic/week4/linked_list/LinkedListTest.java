@@ -47,6 +47,7 @@ class LinkedListTest {
             System.out.println("position:" + i + ", data:" + data);
             assertEquals(data, i);
         }
+        assertEquals(linkedList.getSize(head), 3);
     }
 
     @Test
@@ -68,6 +69,9 @@ class LinkedListTest {
         assertEquals(removedHead.getData(), backupHeadData);
         System.out.println("head, data:" + head.getData());
         assertEquals(head.getData(), item2.getData());
+
+        assertEquals(linkedList.getSize(head), 1);
+
     }
 
     @Test

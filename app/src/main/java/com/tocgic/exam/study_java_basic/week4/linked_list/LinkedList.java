@@ -10,6 +10,7 @@ package com.tocgic.exam.study_java_basic.week4.linked_list;
  * - boolean contains(ListNode head, ListNode nodeTocheck)를 구현하세요.
  */
 public class LinkedList {
+    private int size = 0;
 
     public ListNode add(ListNode head, ListNode nodeToAdd, int position) {
         if (nodeToAdd == null) {
@@ -19,6 +20,7 @@ public class LinkedList {
         if (cur != null) {
             nodeToAdd.setNext(cur.getNext());
             cur.setNext(nodeToAdd);
+            size++;
             return nodeToAdd;
         }
         return null;
@@ -34,7 +36,7 @@ public class LinkedList {
         if (positionToRemove < 0) {
             return null;
         }
-        ListNode cur = null;
+        ListNode cur;
         if (positionToRemove == 0) {
             cur = head;
             if (cur != null) {
@@ -50,6 +52,7 @@ public class LinkedList {
                     cur.setData(0);
                     cur.setNext(null);
                 }
+                size--;
                 return tmp;
             }
         } else {
@@ -57,8 +60,9 @@ public class LinkedList {
             if (prev != null) {
                 cur = prev.getNext();
                 prev.setNext(cur != null ? cur.getNext() : null);
+                size--;
+                return cur;
             }
-            return cur;
         }
         return null;
     }
@@ -83,5 +87,13 @@ public class LinkedList {
             cur = cur.getNext();
         }
         return cur;
+    }
+
+    public int getSize(ListNode head) {
+        if (head != null) {
+            return size + 1;
+        } else {
+            return 0;
+        }
     }
 }
