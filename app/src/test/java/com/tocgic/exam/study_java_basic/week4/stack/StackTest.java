@@ -19,9 +19,8 @@ class StackTest {
     @DisplayName("Push & Pop Test")
     void pushPopTest() {
         for (int i = 0; i < 15; i++) {
-             stack.push(i + 1);
+            stack.push(i + 1);
         }
-        int value;
         for (int i = 10; i > 0; i--) {
             assertEquals(stack.pop(), i);
         }
