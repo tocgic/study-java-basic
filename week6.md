@@ -103,7 +103,7 @@
     }
     ```
 
-    <img src="week6.assets/image-20201226035741097.png" alt="image-20201226035741097" style="zoom:100%;" align="left"/>
+    <img src="week6.assets/image-20201226035741097.png" alt="image-20201226035741097" style="zoom:100%;"/>
 
 
 
@@ -175,7 +175,7 @@
   }
   ```
 
-  <img src="week6.assets/image-20201226061122254.png" alt="image-20201226061122254" style="zoom:100%;" align="left"/>
+  <img src="week6.assets/image-20201226061122254.png" alt="image-20201226061122254" style="zoom:100%;"/>
 
 
 
