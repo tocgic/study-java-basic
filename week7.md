@@ -224,7 +224,9 @@ windows 나 유닉스 계열등 운영체제에 따라 환경 변수 등록하�
 - 변수이름 : CLASSPATH
 - 값 : `java home 경로`/**lib** (추가 하고 싶은 pass가 있는 경우, `:` 을 상용하여, 경로 추가. windows 는 `;`)
 
-![출처 : https://blog.opid.kr/62](week7.assets/image-20210102024306929.png "출처 : https://blog.opid.kr/62")
+![출처 : https://blog.opid.kr/62](week7.assets/image-20210102024306929.png)
+
+*출처 : https://blog.opid.kr/62*
 
 
 
