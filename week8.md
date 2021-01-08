@@ -229,7 +229,7 @@ interface SmartTvRemoteControl extends RemoteControl, TvControl, AudioControl {
 
 
 
-####다중상속 문제(Diamond Problem)
+#### 다중상속 문제(Diamond Problem)
 
 - 문제 상황
 
