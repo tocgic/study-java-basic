@@ -47,6 +47,7 @@
 
 
 
+
 ### [실험] try 사용시, catch & finally 없이 컴파일 오류를 발생하지 않도록 할 수 있을까?
 
 > 위, 에러 메세지를 보면, Resource declarations 을 사용하면, 컴파일 오류를 해결 할 수 있을 것 같다.
@@ -54,7 +55,7 @@
 
 ```
 * try-with-resources (TWR) - Java7
-: TWR 구문을 사용하면, try (...) 안에서 AutoCloseable 인터페이스를 구현한 객체는, try 브록이 종료될때, close() 메소드를 호출함 
+: TWR 구문을 사용하면, try (...) 안에서 AutoCloseable 인터페이스를 구현한 객체는, try 블록이 종료될때, close() 메소드를 호출함 
 ```
 
 > `try (...)` 에 사용할 수 있는 객체는 AutoCloseable 인터페이스를 구현한 객체만 가능한데,
@@ -87,6 +88,7 @@
 > **결과**
 >
 > ![image-20210116051426405](week9.assets/image-20210116051426405.png)
+
 
 
 
