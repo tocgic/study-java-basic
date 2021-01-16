@@ -121,10 +121,10 @@ class TryCatchFinalTest {
             if (!new File("file.txt").exists()) {
                 throw new EOFException();
             }
-        } catch (IOException eof) {
-            eof.printStackTrace();
         } catch (FileNotFoundException fnf) {
             fnf.printStackTrace();
+        } catch (IOException eof) {
+            eof.printStackTrace();
         }
     }
 }
