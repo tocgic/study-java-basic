@@ -309,12 +309,12 @@ void throwTest(double number) {
 - checked exception
   - 반드시 예외 처리를 해야 한다. (try / catch)
   - 컴파일 단계에서 확인 가능
-  - 예외 발생 시 트랜잭션 roll back 하지 않음
+  - ~~예외 발생 시 트랜잭션 roll back 하지 않음~~
   - RuntimeException 을 제외한 Exception의 하위 클래스
 - unchecked exception
   - 명시적 예외 처리를 강제하지 않는다
   - 실행 단계에서 확인 가능
-  - 예외 발생 시 트랜잭션 roll back 한다
+  - ~~예외 발생 시 트랜잭션 roll back 한다~~
   - RuntimeException 의 하위 클래스
 
 
