@@ -122,17 +122,21 @@
 ###### Static Methods
 
 - **[activeCount](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#activeCount())**()
+
   현재 스레드의 **스레드 그룹** 과 하위 **그룹** 에 있는 활성 스레드 수의 추정치를 반환
   현재 스레드의 스레드 그룹에 있는 모든 하위 그룹을 재귀 반복.
   하위 그룹을 탐색하는 동안 스레드 수가 변동 될 수 있으므로, **추정치 임을 유의**. 디버깅/모니터링 용
 
 - **[currentThread()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#currentThread())**
+
   현재 실행중인 스레드 인스턴스의 참조 반환(Thread)
 
 - **[dumpStack()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#dumpStack())**
+
   현재 스레드의 스택 추적을 standard error stream 에 출력. 디버깅 용
 
 - **[enumerate(Thread[] tarray)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#enumerate(java.lang.Thread[]))**
+
   현재 스레드의 스레드 그룹 및 하위 그룹에있는 모든 활성 스레드를 지정된 배열에 복사
   ThreadGroup.enumerate(Thread[]) 를 호출
   array 보다 스레드가 많은 경우, 추가 스레드는 무시 될 수 있음. activeCount 값과 반환값(배열에 넣은 스레드 수) 과 확인 유의.
@@ -144,6 +148,7 @@
     SecurityException - ThreadGroup.checkAccess() : 현재 스레드가 해당 스레드 그룹에 액세스 할 수 없다고 판단되는 경우
 
 - **[getAllStackTraces](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#getAllStackTraces())**()
+
   모든 라이브 스레드에 대한 스택 추적 맵 반환.
   메서드가 호출 되는 동안 스레드가 실행될 수 있음. 각 스레드의 스택 추적은 스냅샷 만 나타냄. 추적은 서로 다른 시간에 얻을 수 있음
 
@@ -153,13 +158,16 @@
     SecurityExcepiton - 보안관리자가 존재하고, checkPermission 메소드가 스레드의 stack trace 를 가져오는 것을 허용하지 않는경우
 
 - **[getDefaultUncaughtExceptionHandler](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#getDefaultUncaughtExceptionHandler())**()
+
   포착되지 않은 예외로 인해 스레드가 갑자기 종료 될 대 호출되는 기본 핸드러를 반환.
   기본값이 없는 경우, null 반환
 
 - **[holdsLock](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#holdsLock(java.lang.Object))**([Object](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html) obj)
+
   현재 스레드가 지정된 개체에 대한 모니터 잠금을 보유하는 경우에만 `true` 반환
 
 - **[interrupted](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#interrupted())**()
+
   현재 스레드가 중단되었는지 여부를 테스트
 
   > 스레드 의 *중단 된 상태* 는이 메서드에 의해 지워집니다.
@@ -167,6 +175,7 @@
   > (현재 스레드가 다시 중단되지 않는 한 첫 번째 호출이 중단 된 상태를 지운 후 두 번째 호출이이를 검사하기 전에)
 
 - **[onSpinWait](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#onSpinWait())**()
+
   다른 활동에서 하나 이상의 조치가 발생할 때까지 호출자가 일시적으로 진행할 수 없음
 
   > 예를 들어 일부 플래그가 해당 메서드 외부에 설정 될 때까지 루프에서 회전하는 클래스의 메서드를 고려
@@ -192,15 +201,19 @@
   > 위의 코드는 `onSpinWait` 메서드가 전혀 호출되지 않은 경우에도 올바르게 유지 됨
 
 - **[setDefaultUncaughtExceptionHandler](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#setDefaultUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler))**([Thread.UncaughtExceptionHandler](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.UncaughtExceptionHandler.html) eh)
+
   잡히지 않은 예외로 인해 스레드가 갑자기 종료되고 해당 스레드에 대해 정의 된 다른 핸들러가 없을 때 호출되는 기본 핸들러를 설정
 
 - **[sleep](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#sleep(long))**(long millis)
+
   시스템 타이머 및 스케줄러의 정밀도와 정확성에 따라 현재 실행중인 스레드가 지정된 밀리 초 동안 잠자기 (일시적으로 실행 중지)
 
 - **[sleep](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#sleep(long,int))**(long millis, int nanos)
+
   시스템 타이머 및 스케줄러의 정밀도와 정확성에 따라 현재 실행중인 스레드가 지정된 밀리 초 수와 지정된 나노초 수 동안 휴면 (일시적으로 실행 중지)
 
 - **[yield](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#yield())**()
+
   현재 스레드가 프로세서의 현재 사용을 양보 할 의사가 있다는 스케줄러에 대한 힌트
 
   > Yield는 CPU를 과도하게 사용하는 스레드 간의 상대적 진행을 개선하려는 경험적 시도임
@@ -213,39 +226,51 @@
 ###### Instance Methods
 
 - **[checkAccess](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#checkAccess())**()
+
   현재 실행중인 스레드에이 스레드를 수정할 수있는 권한이 있는지 확인
 
 - **[clone](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#clone())**()
+
   스레드를 의미있게 복제 할 수 없기 때문에 **CloneNotSupportedException** 이 발생
 
 - **[countStackFrames](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#countStackFrames())**() - **Deprecated, for removal**
+
   이 스레드의 스택 프레임 수를 계산합니다. 스레드는 일시 중단되어야함
 
 - **[getContextClassLoader](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#getContextClassLoader())**()
+
   `ClassLoader`이 스레드 의 컨텍스트 를 리턴
 
 - **[getId](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#getId())**()
+
   이 Thread의 식별자를 리턴
 
 - **[getName](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#getName())**()
+
   이 스레드의 이름을 반환
 
 - **[getPriority](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#getPriority())**()
+
   이 스레드의 우선 순위를 반환
 
 - **[getStackTrace](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#getStackTrace())**()
+
   이 스레드의 스택 덤프를 나타내는 스택 추적 요소의 배열을 리턴
 
 - **[getState](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#getState())**()
+
   이 스레드의 상태를 리턴
 
 - **[getThreadGroup](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#getThreadGroup())**()
+
   이 스레드가 속한 스레드 그룹을 반환
 
 - **[getUncaughtExceptionHandler](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#getUncaughtExceptionHandler())**()
+
   이 스레드가 포착되지 않은 예외로 인해 갑자기 종료 될 때 호출되는 핸들러를 리턴
 
 - **[interrupt](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#interrupt())**()
+
   이 스레드를 중단
 
   > https://coding-factory.tistory.com/571
@@ -257,12 +282,15 @@
   > 스레드가 일시 정지 상태가 되지 않으면 interrupt() 메소드 호출은 아무런 의미가 없음
 
 - **[isAlive](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#isAlive())**()
+
   이 스레드가 살아 있는지 테스트
 
 - **[isDaemon](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#isDaemon())**()
+
   이 스레드가 데몬 스레드인지 테스트
 
 - **[isInterrupted](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#isInterrupted())**()
+
   이 스레드가 중단되었는지 여부를 테스트
 
   ##### isInterrupted() 가 대부분 false 를 반환 하는 이유
@@ -326,36 +354,47 @@
   > ![image-20210123122517898](week10.assets/image-20210123122517898.png)
 
 - **[join](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#join())**()
+
   이 스레드가 죽을 때까지 기다림
 
 - **[join](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#join(long))**(long millis)
+
   `millis`이 스레드가 죽을 때까지 최대 밀리 초를 기다림
 
 - **[join](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#join(long,int))**(long millis, int nanos)
+
   이 스레드가 죽을 때까지 최대 `millis`밀리 초와 `nanos`나노초를 기다림
 
 - **[resume](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#resume())**() - **Deprecated**
+
   일시 중단 된 스레드를 다시 시작
 
 - **[run](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#run())**()
+
   이 스레드가 별도의 `Runnable`실행 개체를 사용하여 생성 된 경우 해당 `Runnable`개체의 `run`메서드가 호출됩니다. 그렇지 않으면이 메서드는 아무 작업도 수행하지 않고 반환
 
 - **[setContextClassLoader](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#setContextClassLoader(java.lang.ClassLoader))**([ClassLoader](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassLoader.html) cl)
+
   이 Thread에 대한 컨텍스트 ClassLoader를 설정
 
 - **[setDaemon](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#setDaemon(boolean))**(boolean on)
+
   이 스레드를 [데몬](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#isDaemon()) 스레드 또는 사용자 스레드로 표시
 
 - **[setName](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#setName(java.lang.String))**([String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) name)
+
   이 스레드의 이름을 인수와 동일하게 변경
 
 - **[setPriority](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#setPriority(int))**(int newPriority)
+
   이 스레드의 우선 순위를 변경
 
 - **[setUncaughtExceptionHandler](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#setUncaughtExceptionHandler(java.lang.Thread.UncaughtExceptionHandler))**([Thread.UncaughtExceptionHandler](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.UncaughtExceptionHandler.html) eh)
+
   이 스레드가 포착되지 않은 예외로 인해 갑자기 종료 될 때 호출되는 핸들러를 설정
 
 - **[start](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#start())**()
+
   이 스레드가 실행을 시작하도록합니다. Java Virtual Machine `run`은 이 스레드 의 메소드를 호출
 
 - **[stop](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#stop())**() - **Deprecated.**
@@ -375,6 +414,7 @@
   이 스레드를 일시 중단
 
 - **[toString](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#toString())**()
+
   스레드의 이름, 우선 순위 및 스레드 그룹을 포함하여이 스레드의 문자열 표현을 반환
 
 
@@ -390,6 +430,7 @@
 ###### Instance Methods
 
 - **[run](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html#run())**()
+
   객체 구현 인터페이스 `Runnable`가 스레드를 생성하는 데 사용되는 경우 스레드를 시작하면 `run`개별적으로 실행되는 스레드에서 객체의 메서드가 호출됨
 
 
