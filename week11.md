@@ -158,14 +158,14 @@ public class EnumTest {
 }
 ```
 
-> **#OUTPUT**
->
-> 레몬, Red:FE, Green:FB, Blue:00
-> 라임, Red:8D, Green:F9, Blue:00
-> 딸기, Red:FF, Green:2F, Blue:92
->
-> BUILD SUCCESSFUL in 298ms
+**#결과**
+```
+레몬, Red:FE, Green:FB, Blue:00
+라임, Red:8D, Green:F9, Blue:00
+딸기, Red:FF, Green:2F, Blue:92
 
+BUILD SUCCESSFUL in 298ms
+```
 
 
 ###### enum 상수 (EnumConstant) 에서 classBody 구현
