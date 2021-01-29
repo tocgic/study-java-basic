@@ -11,7 +11,7 @@ package com.tocgic.exam.study_java_basic.week8;
  * - next
  *      - 자바에서 예외 처리 방법 (try, catch, throw, throws, finally)
  *      - 자바가 제공하는 예외 계층 구조 (최상위는?)
- *      - Exception과 Error의 차이는?
+ *      - Exception 과 Error 의 차이는?
  *      - RuntimeException과 RE가 아닌 것의 차이는?
  *      - 커스텀한 예외 만드는 방법
  */
