@@ -99,15 +99,26 @@ public @interface Retention {
 열거 형 RetentionPolicy로 표시되는 세 가지 값 중 하나를 가질 수 있음
 
 - SOURCE
-  이 정책이있는 주석은 컴파일 중에 javac에 의해 삭제됩니다.
+  이 정책이있는 주석은 컴파일 중에 javac에 의해 삭제됨.
 
   > 일반주석 처럼 사용
 
+  - ex) @Override
+
 - CLASS
-  이는 주석이 클래스 파일에 존재하지만 JVM에서 런타임시 반드시 액세스 할 수 없음을 의미합니다. 이것은 거의 사용되지 않지만 JVM 바이트 코드의 오프라인 분석을 수행하는 도구에서 가끔 나타납니다.
+  이는 주석이 클래스 파일에 존재
+   JVM에서 런타임시 반드시 액세스 할 수 없음을 의미합니다. 이것은 거의 사용되지 않지만 JVM 바이트 코드의 오프라인 분석을 수행하는 도구에서 가끔 나타납니다.
+
+  > class 까지 포함되어있으나, JVM 메모리에 적재 될때는 포함되지 않음. 따라서, 리플렉션을 사용하려면, RUNTIME 을 사용해야 함
+  >
+  > 바이트 코드에 `// invisible` 주석이 생김 
 
 - RUNTIME
   이는 사용자 코드가 런타임에 액세스 할 수 있도록 주석을 사용할 수 있음을 나타냅니다 (리플렉션 사용).
+
+  > 바이트 코드에 `// invisible` 주석이 없음
+
+  - ex) @FunctionalInterface
 
 ```java
 public enum RetentionPolicy {
@@ -132,6 +143,8 @@ public enum RetentionPolicy {
     RUNTIME
 }
 ```
+
+- SOURCE -> CLASS -> RUNTIME
 
 
 
@@ -348,6 +361,12 @@ public @interface Repeatable {
 - Hook에 부합하는 어노테이션 프로세서
 
   - 자바 코드(.file)를 만들 수 있다. 따라서 메소드 추가를 위해 인스턴스 생성을 위한 기존 자바 클래스를 조작할 필요가 없다. 마치 직접 코딩한 자바 소스 파일처럼, 자바 컴파일러에 의해 컴파일될 것이다
+
+- ServiceLoader
+
+  - java.util.ServiceLoader
+  - 예제
+    https://github.com/tocgic/exam-service-loader
 
 
 
