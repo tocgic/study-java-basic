@@ -1,0 +1,2 @@
+BufferedWriter 를 사용하여 파일 쓰기
+BufferedReader 를 사용하여 파일 읽기
