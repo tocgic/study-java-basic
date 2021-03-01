@@ -338,7 +338,7 @@ public static void process(List<? extends Foo> list) { /* ... */ }
 - 코드가 형식 매개 변수에 의존하지 않는 제네릭 클래스의 메서드를 사용하는 경우. 예를 들어, `List.size` 또는 `List.clear` 입니다. 사실, `클래스 <?>` 에서 방법의 대부분 때문에 너무 자주 사용되는 `클래스 <T는>` 에 의존하지 않는 `T` .
 
 ```java
-public static void printList (List <Object> list) {
+public static void printList(List <Object> list) {
     for (Object elem : list)
         System.out.println (elem + "");
     System.out.println ();
@@ -346,7 +346,7 @@ public static void printList (List <Object> list) {
 ```
 
 ```java
-public static void printList (List <?> list) {
+public static void printList(List <?> list) {
     for (Object elem : list)
         System.out.print (elem + "");
     System.out.println ();
@@ -354,8 +354,8 @@ public static void printList (List <?> list) {
 ```
 
 ```java
-List <Integer> li = Arrays.asList (1, 2, 3);
-List <String> ls = Arrays.asList ( "one", "two", "three");
+List<Integer> li = Arrays.asList(1, 2, 3);
+List<String> ls = Arrays.asList( "one", "two", "three");
 printList (li);
 printList (ls);
 ```
@@ -369,7 +369,7 @@ printList (ls);
 하한 와일드 카드는 `super` 키워드 다음에 와일드 카드 문자 ( ' `?` ')와 *하한이* 뒤 따르는 와일드 카드 문자 ( ' `?` ')를 사용하여 표현됩니다 . `<? super A>` 
 
 ```java
-public static void addNumbers (List <? super Integer> list) {
+public static void addNumbers(List <? super Integer> list) {
     for (int i = 1; i <= 10; i ++) {
         list.add (i);
     }
